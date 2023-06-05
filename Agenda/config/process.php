@@ -4,10 +4,10 @@
    include_once('connection.php');
    include_once('url.php');
    $data = $_POST;
-//CRUD com IF e ELSE
+
    if (!empty($data)) {
-      //Create
-      if ($data['type'] === 'Create') {
+      //CREATE
+      if ($data['type'] === 'create') {
          $name = $data['name'];
          $phone = $data['phone'];
          $observations = $data['observations'];
@@ -18,13 +18,13 @@
          $stmt->bindParam(":observations", $observations);
          try {
             $stmt->execute();
-            $_SESSION['msg'] = "Contato criado com sucesso!";
+            $_SESSION["msg"] = "Contato criado com sucesso!";
          } catch (PDOException $e) {
             $error = $e->getMessage();
             echo "Erro: $error";
          }
       //UPDATE
-      } elseif ($data['type'] === 'Edit') {
+      } elseif ($data['type'] === 'edit') {
          $name = $data['name'];
          $phone = $data['phone'];
          $observations = $data['observations'];
@@ -37,13 +37,13 @@
          $stmt->bindParam(":id", $id);
          try {
             $stmt->execute();
-            $_SESSION['msg'] = "Contato atualizado com sucesso!";
+            $_SESSION["msg"] = "Contato atualizado com sucesso!";
          } catch (PDOException $e) {
             $error = $e->getMessage();
             echo "Erro: $error";
          }
-         //DELETE
-      } elseif ($data['type'] === 'Delete') {
+      //DELETE
+      } elseif ($data['type'] === 'delete') {
 
          $id = $data['id'];
          $query = "DELETE FROM contacts WHERE id = :id";
@@ -51,7 +51,7 @@
          $stmt->bindParam(":id", $id);
          try {
             $stmt->execute();
-            $_SESSION['msg-del'] = "Contato excluído com sucesso!";
+            $_SESSION["msg"] = "Contato excluído com sucesso!";
          } catch (PDOException $e) {
             $error = $e->getMessage();
             echo "Erro: $error";
@@ -60,7 +60,7 @@
       //Redirecionando após crudiar para home
       header("Location: " . $BASE_URL . "../index.php");
    } else {
-    //READ
+    //READ - SHOW
       if (!empty($_GET)) {
          //1 contato
          $id;

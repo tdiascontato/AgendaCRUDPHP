@@ -28,7 +28,7 @@
             </a>
             <div>
                 <div class="navbar-nav">
-                    <a href="<?=$BASE_URL?>index.php" class="nav-link" id="home-link">AGENDA DO TIAGO</a>
+                    <a href="<?=$BASE_URL?>index.php" class="nav-link" >AGENDA DO TIAGO</a>
                     <a href="<?=$BASE_URL?>create.php" class="nav-link" id="home-link">ADICIONAR CONTATOS</a>
                 </div>
             </div>

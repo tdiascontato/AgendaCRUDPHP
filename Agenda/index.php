@@ -27,12 +27,12 @@
                      <td scope="row"><?= $contact['name'] ?></td>
                      <td scope="row"><?= $contact['phone'] ?></td>
                      <td class="actions">
-                        <a href="<?= $BASE_URL ?>show.php?id=<?= $contact['id'] ?>"><i class="glyphicon glyphicon-eye-open"></i></a>
-                        <a href="<?= $BASE_URL ?>edit.php?id=<?= $contact['id'] ?>"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="<?= $BASE_URL ?>show.php?id=<?= $contact['id'] ?>"><i class="glyphicon glyphicon-eye-open check-icon"></i></a>
+                        <a href="<?= $BASE_URL ?>edit.php?id=<?= $contact['id'] ?>"><i class="glyphicon glyphicon-edit edit-icon"></i></a>
                         <form class="delete-form" action="<?= $BASE_URL ?>/config/process.php" method="POST">
                            <input type="hidden" name="type" value="Delete">
                            <input type="hidden" name="id" value="<?= $contact['id'] ?>">
-                           <button type="submit" class="delete-btn"><i class="glyphicon glyphicon-trash"></i></button>
+                           <button type="submit" class="delete-btn"><i class="glyphicon glyphicon-trash delete-icon"></i></button>
                         </form>
                      </td>
                   </tr>

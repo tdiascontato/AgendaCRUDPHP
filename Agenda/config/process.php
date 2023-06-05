@@ -57,7 +57,7 @@
             echo "Erro: $error";
          }
       }
-      //Redirect home
+      //Redirecionando após crudiar para home
       header("Location: " . $BASE_URL . "../index.php");
    } else {
     //READ
@@ -79,5 +79,5 @@
          $contacts = $stmt->fetchAll();
       }
    }
-// Close connection
+// Fechar conexao
 $conn = null;
